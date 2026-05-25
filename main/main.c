@@ -71,7 +71,6 @@ void app_main(void)
 
 
 
-
 /*
 #include "tlc5925.h"
 #include "bam_led.h"
@@ -93,14 +92,15 @@ typedef struct
     uint8_t b;
 } rgb_t;
 
-//
-   DIP binary value -> color
+//   DIP binary value -> color
 
-   0000 = off
-   0001 = red
-   0010 = green
-   0011 = blue
-   ...
+  // 0000 = off
+  // 0001 = red  	12 mA
+  // 0010 = green	12.58 mA 
+  // 0011 = blue	13.6 mA
+  // 1011 = white	36.3 mA
+  
+  // ...
 //
 static const rgb_t color_table[16] =
 {
@@ -147,14 +147,14 @@ static uint8_t dip_read_value(void)
     uint8_t value = 0;
 
     //
-       DIP switch wiring assumed:
+      // DIP switch wiring assumed:
 
-       GPIO ---- DIP ---- GND
+      // GPIO ---- DIP ---- GND
 
-       OFF = input pulled HIGH = 0
-       ON  = input LOW         = 1
+      // OFF = input pulled HIGH = 0
+       //ON  = input LOW         = 1
 
-       That is why the logic is inverted.
+      // That is why the logic is inverted.
     //
 
     if (gpio_get_level(DIP0) == 0) value |= (1 << 0);
@@ -203,6 +203,8 @@ void app_main(void)
     }
 }
 
+
+
 */
 
 
@@ -219,7 +221,6 @@ void app_main(void)
 
 
 /*
-
 
 
 */

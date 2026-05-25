@@ -1,72 +1,76 @@
-# =========================
-# ESP-IDF build artifacts
-# =========================
-build/
-sdkconfig.old
-sdkconfig.bak
+# -----------------------------------------------------------------------------
+# ESP-IDF build system
+# -----------------------------------------------------------------------------
+/build/                      # Compiled output (object files, binaries, etc.)
+/CMakeCache.txt
+/CMakeFiles/
+/cmake_install.cmake
+/idf-env.json
+idf.py
 
-# CMake
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-compile_commands.json
+/managed_components/
 
-# Ninja / Make
-*.ninja
-*.ninja_deps
-*.ninja_log
-Makefile
-
-# =========================
-# ESP-IDF generated files
-# =========================
-dependencies.lock
-flasher_args.json
-partition_table/
-managed_components/
-
-# =========================
-# Binary outputs
-# =========================
-*.bin
+# -----------------------------------------------------------------------------
+# Espressif tools & dependencies
+# -----------------------------------------------------------------------------
+/espressif/                  # IDF tools (toolchains, Python env, etc.)
+/dist/
 *.elf
+*.bin
 *.map
-*.hex
+*.tmp
 
-# =========================
-# Logs
-# =========================
-*.log
+# -----------------------------------------------------------------------------
+# SDK configuration
+# -----------------------------------------------------------------------------
+sdkconfig.old
+sdkconfig.defaults
+sdkconfig.defaults.old
 
-# =========================
-# Python virtual environments
-# =========================
-venv/
+# -----------------------------------------------------------------------------
+# Python environments & caches
+# -----------------------------------------------------------------------------
 .venv/
-env/
-
-# Python cache
+venv/
+.env/
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
-# =========================
-# VSCode
-# =========================
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/launch.json
+# -----------------------------------------------------------------------------
+# Eclipse workspace data (safe to ignore, but keep project files)
+# -----------------------------------------------------------------------------
+.metadata/
+.localhistory/
+.externalToolBuilders/
+target/
+Release/
+Debug/
+.settings/language.settings.xml    # auto-generated per user
+.settings/org.eclipse.cdt.core.prefs # optional to ignore if user-specific
 
-# =========================
-# OS files
-# =========================
+# -----------------------------------------------------------------------------
+# OS and editor junk files
+# -----------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# =========================
-# Temporary files
-# =========================
+# -----------------------------------------------------------------------------
+# Backup and temporary files
+# -----------------------------------------------------------------------------
+*~
+*.bak
 *.tmp
 *.swp
-*~
+*.swo
+
+# -----------------------------------------------------------------------------
+# Optional: ignore other IDE files (if using multiple environments)
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+cmake-build-*/
+
+/build/
